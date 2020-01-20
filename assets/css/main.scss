@@ -1,0 +1,64 @@
+ @import 'colors';
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+// End of Global
+
+// Audio App
+#audio-trackContainer{
+    width: 100%;
+    height: 300px;
+    background-color: grey;
+    overflow-x: auto;
+}
+.audio-track{
+    position: relative;
+    height: 92px;
+    width: 100%;
+    background-color: $dark-grey;
+    border-bottom: 1px solid $light-grey;
+    box-sizing: border-box;
+    padding: 14px;
+}
+.audio-albumCover{
+    width: 64px;
+    height: 64px;
+    background-color: $light-grey;
+}
+.audio-description-container{
+    position: absolute;
+    left: 88px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    padding: 14px;
+}
+.audio-description-container h1{
+    color:white;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom:10px;
+}
+.audio-description-container h2{
+    color:$light-grey;
+    font-size: 12px;
+    font-weight: 500;
+}
+.audio-playBtn{
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    z-index: 2;
+    background-color: red;
+    top:14px;
+    left: 14px; 
+    display: none;  
+}
+.audio-playBtn-active{
+    display: block;  
+}
