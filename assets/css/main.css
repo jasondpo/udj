@@ -55,7 +55,7 @@
   width: 64px;
   height: 64px;
   z-index: 2;
-  background-color: red;
+  background-color: rgba(0, 0, 0, 0.5);
   top: 14px;
   left: 14px;
   display: none;
@@ -63,4 +63,28 @@
 
 .audio-playBtn-active {
   display: block;
+}
+
+.audio-selected-track {
+  background-color: #FE2C55;
+}
+
+.audio-selected-track h1 {
+  color: white;
+}
+
+.audio-selected-track h2 {
+  color: #9A011F;
+}
+
+#audio-userList-container {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  right: 0;
+  height: 300px;
+  box-sizing: border-box;
+  padding: 14px;
+  z-index: 2;
+  background-color: #201F1E;
 }

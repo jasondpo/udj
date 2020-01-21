@@ -10,7 +10,8 @@ var playlist = [
 var app = new Vue({
     el: '#audio-app',
     data: {
-        numberOftracks: "",
+        userListContainer: false,
+        numberOftracks: [],
         currentIndex: 0,
         artists: [],
         songs: [],
@@ -18,12 +19,14 @@ var app = new Vue({
         covers: []
     },
     mounted() {
-        this.numberOftracks = playlist.length;
+        for (var i = 1; i <= playlist.length; i++) {
+            this.numberOftracks.push([i])
+        }
         this.collectArtists();
     },
     methods: {
         playMusic(x) {
-            musicTrack.src = playlist[x].musicFile;
+            musicTrack.src = playlist[x - 1].musicFile;
             musicTrack.play();
         },
         stopMusic() {
@@ -44,6 +47,8 @@ var app = new Vue({
                 this.currentIndex = 0;
                 this.stopMusic()
             }
+        },
+        addToUserPlayList(index) {
         }
     }
 });

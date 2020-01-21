@@ -16,16 +16,20 @@
 
 <body>
     <div id="audio-app">
+        <button @click="userListContainer=!userListContainer">Show List</button>
+        <div id="audio-userList-container" v-show="userListContainer">
+
+        </div>
         <div id="audio-trackContainer">
             <!-- Beginning of track loop -->
-            <div class="audio-track" v-for="x in numberOftracks">
-                <div class="audio-albumCover" @click="playMusic(x-1), getIndex(x)"
+            <div class="audio-track" v-for="x in numberOftracks" :class="{'audio-selected-track':x.selected}">
+                <div class="audio-albumCover" @click="playMusic(x), getIndex(x)"
                     v-bind:style="{ backgroundImage: 'url(' + covers[x-1] + ')' }"></div>
                 <div class="audio-playBtn"
                     :class="{'audio-playBtn-active': currentIndex !== x, 'audio-playBtn-active': currentIndex === x}"
                     @click=" getIndex(x)">
                 </div>
-                <div class="audio-description-container">
+                <div class="audio-description-container" @click="$set(x, 'selected', !x.selected)">
                     <h1>{{artists[x-1]}} - {{songs[x-1]}}</h1>
                     <h2>{{albums[x-1]}}</h2>
                 </div>
